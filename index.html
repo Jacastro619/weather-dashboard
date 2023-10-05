@@ -16,32 +16,31 @@
     <header>
       <h1>Weather Dashboard</h1>
     </header>
-    <nav class="navbar navbar-light bg-light container-fluid">
-      <div class="container-fluid">
-        <form class="d-flex col-12 col-md-2 col-lg-2">
-          <input
-            id="search-input"
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
     <section class="search-history container-fluid">
-      <div class="prev-search col-12 col-md-2 col-lg-2">
-        <button type="button" class="btn btn-info w-100">Info</button>
-        <button type="button" class="btn btn-info w-100">Info</button>
-        <button type="button" class="btn btn-info w-100">Info</button>
-        <button type="button" class="btn btn-info w-100">Info</button>
-        <button type="button" class="btn btn-info w-100">Info</button>
-        <button type="button" class="btn btn-info w-100">Info</button>
-        <button type="button" class="btn btn-info w-100">Info</button>
-        <button type="button" class="btn btn-info w-100">Info</button>
-        <button type="button" class="btn btn-info w-100">Info</button>
-        <button type="button" class="btn btn-info w-100">Info</button>
+      <div class="row m-2 mt-4">
+        <div class="prev-search col-12 col-md-2 col-lg-2 bg-light">
+          <nav class="navbar navbar-light bg-light w-100">
+            <div class="container-fluid w-100 justify-content-center">
+              <form class="search-bar d-flex">
+                <input
+                  id="search-input"
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="City here"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </nav>
+          <button type="button" class="btn btn-info w-100 custom-btn">
+            Info
+          </button>
+        </div>
+        <div class="weather-content col-12 col-md-9 col-lg-9 bg-light"
+        </div>
       </div>
     </section>
     <script
