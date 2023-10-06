@@ -30,17 +30,79 @@
                   placeholder="City here"
                   aria-label="Search"
                 />
-                <button id="search-btn" class="btn btn-outline-success" type="submit">
+                <button
+                  id="search-btn"
+                  class="btn btn-outline-success"
+                  type="submit"
+                >
                   Search
                 </button>
               </form>
             </div>
           </nav>
-          <button type="button" id="history-btn" class="btn btn-info w-100 custom-btn">
+          <button
+            type="button"
+            id="history-btn"
+            class="btn btn-info w-100 custom-btn"
+          >
             Info
           </button>
         </div>
-        <div class="weather-content col-12 col-md-9 col-lg-9 bg-light"
+        <div class="weather-content col-12 col-md-9 col-lg-9 bg-light">
+          <div id="current-day">
+            <h2 id="cur-day-city"></h2>
+            <h3 id="cur-day-temp">Temp:</h3>
+            <h3 id="cur-day-wind">Wind:</h3>
+            <h3 id="cur-day-humidity">Humidity:</h3>
+          </div>
+          <div class="future-days container-fluid">
+            <div class="row cards">
+              <div class="card custom-card" style="width: 15rem">
+                <div class="card-body">
+                  <h5 class="card-title">10/6/2023</h5>
+                  <p id="fut-date1"></p>
+                  <p id="fut-temp1">Temp:</p>
+                  <p id="fut-wind1">Wind:</p>
+                  <p id="fut-hum1">Humidity:</p>
+                </div>
+              </div>
+              <div class="card custom-card" style="width: 15rem">
+                <div class="card-body">
+                  <h5 class="card-title">10/6/2023</h5>
+                  <p id="fut-date2">☀</p>
+                  <p>Temp:</p>
+                  <p>Wind:</p>
+                  <p>Humidity:</p>
+                </div>
+              </div>
+              <div class="card custom-card" style="width: 15rem">
+                <div class="card-body">
+                  <h5 class="card-title">10/6/2023</h5>
+                  <p>☁</p>
+                  <p>Temp:</p>
+                  <p>Wind:</p>
+                  <p>Humidity:</p>
+                </div>
+              </div>
+              <div class="card custom-card" style="width: 15rem">
+                <div class="card-body">
+                  <h5 class="card-title">10/6/2023</h5>
+                  <p>☀</p>
+                  <p>Temp:</p>
+                  <p>Wind:</p>
+                  <p>Humidity:</p>
+                </div>
+              </div>
+              <div class="card custom-card" style="width: 15rem">
+                <div class="card-body">
+                  <h5 class="card-title">10/6/2023</h5>
+                  <p>🌧</p>
+                  <p>Temp:</p>
+                  <p>Wind:</p>
+                  <p>Humidity:</p>
+                </div>
+              </div>
+          </div>
         </div>
       </div>
     </section>

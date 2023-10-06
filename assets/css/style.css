@@ -34,6 +34,7 @@ nav {
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgb(105, 104, 104);
   min-height: 420px;
+  max-height: 420px;
 }
 
 .btn-info {
@@ -46,9 +47,45 @@ nav {
 }
 
 .weather-content {
-  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  /* visibility: hidden; */
   border: 2px solid #333333;
   box-shadow: 2px 2px 8px rgb(105, 104, 104);
   border-radius: 10px;
   margin-left: 10px;
+}
+
+#current-day {
+  background: linear-gradient(
+    to bottom right,
+    rgb(214, 236, 238),
+    rgb(8, 200, 214)
+  );
+  margin-top: 10px;
+  padding: 5px;
+  min-height: 200px;
+  border: 2px solid #333333;
+  border-radius: 10px;
+}
+
+.future-days {
+  display: flex;
+  flex-direction: row;
+}
+
+.cards {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.custom-card {
+  margin: 10px;
+  background: linear-gradient(
+    to bottom right,
+    rgb(214, 236, 238),
+    rgb(8, 200, 214)
+  );
 }
