@@ -4,14 +4,33 @@ var historyBtn = $("#history-btn");
 var searchInput = $("#search-input");
 var city;
 var formEl = $("#search-form");
+var prevSearchEl = $(".prev-search");
 var weatherContent = $("#weather-content");
 var currDayCity = $("#cur-day-city");
 var date = dayjs().format("M/D/YYYY");
 var currDayDate;
 var numArray = ["1", "2", "3", "4", "5"];
+var historyArray;
 
-console.log(date);
-function getCurrentDayApi() {}
+renderBtns();
+function renderBtns() {
+  var historyString = localStorage.getItem("historyArr");
+  if (historyString === null) {
+    historyArray = [];
+  } else {
+    historyArray = JSON.parse(historyString);
+    for (var i = 0; i < historyArray.length; i++) {
+      var btnEl = $("<button>");
+      btnEl.attr({
+        id: "history-btn",
+        type: "button",
+        class: "btn btn-info w-100 custom-btn",
+      });
+      btnEl.text(historyArray[i]);
+      prevSearchEl.append(btnEl);
+    }
+  }
+}
 
 function getForecastApi(event) {
   event.preventDefault();
@@ -25,18 +44,33 @@ function getForecastApi(event) {
     })
     .then(function (data) {
       console.log(data);
-      var icon;
-      if (data.weather[0].main === "Clear") {
-        icon = "☀";
-      } else if (data.weather[0].main === "Clouds") {
-        icon = "☁";
+      if (data.cod !== 200) {
+        alert("Invalid input, please check spelling.");
       } else {
-        icon = "🌧";
+        var btnEl = $("<button>");
+        btnEl.attr({
+          id: "history-btn",
+          type: "button",
+          class: "btn btn-info w-100 custom-btn",
+        });
+        btnEl.text(city);
+        prevSearchEl.append(btnEl);
+        historyArray.push(city);
+        console.log(historyArray);
+        localStorage.setItem("historyArr", JSON.stringify(historyArray));
+        var icon;
+        if (data.weather[0].main === "Clear") {
+          icon = "☀";
+        } else if (data.weather[0].main === "Clouds") {
+          icon = "☁";
+        } else {
+          icon = "🌧";
+        }
+        currDayCity.text(`${data.name} ${date} ${icon}`);
+        $("#cur-day-temp").text(`Temp: ${Math.floor(data.main.temp)}`);
+        $("#cur-day-wind").text(`Wind: ${data.wind.speed.toFixed(2)} MPH`);
+        $("#cur-day-humidity").text(`Humidity: ${data.main.humidity}%`);
       }
-      currDayCity.text(`${data.name} ${date} ${icon}`);
-      $("#cur-day-temp").text(`Temp: ${Math.floor(data.main.temp)}`);
-      $("#cur-day-wind").text(`Wind: ${data.wind.speed.toFixed(2)} MPH`);
-      $("#cur-day-humidity").text(`Humidity: ${data.main.humidity}%`);
     });
 
   fetch(forecastUrl)
