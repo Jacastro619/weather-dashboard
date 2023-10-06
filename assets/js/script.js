@@ -1,8 +1,8 @@
 var apiKey = "a55b9587095f1ce63827f16c4ab8c6ef";
-var city = "salem";
 var searchBtn = $("#search-btn");
 var historyBtn = $("#history-btn");
 var searchInput = $("#search-input");
+var city;
 var formEl = $("#search-form");
 var weatherContent = $("#weather-content");
 var currDayCity = $("#cur-day-city");
@@ -10,10 +10,15 @@ var date = dayjs().format("M/D/YYYY");
 var currDayDate;
 var numArray = ["1", "2", "3", "4", "5"];
 
-var currDayUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},us&appid=${apiKey}&units=imperial`;
-var forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city},us&appid=${apiKey}&units=imperial`;
 console.log(date);
-function getCurrentDayApi() {
+function getCurrentDayApi() {}
+
+function getForecastApi(event) {
+  event.preventDefault();
+  city = searchInput.val().trim();
+  var currDayUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},us&appid=${apiKey}&units=imperial`;
+  var forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city},us&appid=${apiKey}&units=imperial`;
+  console.log(city);
   fetch(currDayUrl)
     .then(function (response) {
       return response.json();
@@ -33,9 +38,7 @@ function getCurrentDayApi() {
       $("#cur-day-wind").text(`Wind: ${data.wind.speed.toFixed(2)} MPH`);
       $("#cur-day-humidity").text(`Humidity: ${data.main.humidity}%`);
     });
-}
 
-function getForecastApi() {
   fetch(forecastUrl)
     .then(function (response) {
       return response.json();
@@ -77,7 +80,5 @@ function getForecastApi() {
     });
 }
 
-getForecastApi();
-getCurrentDayApi();
-
+formEl.on("submit", getForecastApi);
 //Clear, Clouds, Rain
