@@ -19,9 +19,10 @@
     <section class="search-history container-fluid">
       <div class="row m-2 mt-4">
         <div class="prev-search col-12 col-md-2 col-lg-2 bg-light">
+          <p class="w-100 text-center mb-0">Search For a City</p>
           <nav class="navbar navbar-light bg-light w-100">
             <div class="container-fluid w-100 justify-content-center">
-              <form class="search-bar d-flex">
+              <form id="search-form" class="search-bar d-flex">
                 <input
                   id="search-input"
                   class="form-control me-2"
@@ -29,13 +30,13 @@
                   placeholder="City here"
                   aria-label="Search"
                 />
-                <button class="btn btn-outline-success" type="submit">
+                <button id="search-btn" class="btn btn-outline-success" type="submit">
                   Search
                 </button>
               </form>
             </div>
           </nav>
-          <button type="button" class="btn btn-info w-100 custom-btn">
+          <button type="button" id="history-btn" class="btn btn-info w-100 custom-btn">
             Info
           </button>
         </div>
@@ -43,6 +44,7 @@
         </div>
       </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"

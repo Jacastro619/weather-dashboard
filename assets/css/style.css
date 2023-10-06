@@ -10,13 +10,13 @@ body {
 header {
   text-align: center;
   color: whitesmoke;
-  border-bottom: 2px solid #bdbcbc;
+  border-bottom: 2px solid #686868;
   /* background: linear-gradient(to right, rgb(170, 240, 247), rgb(8, 200, 214)); */
   padding: 50px;
 }
 
 nav {
-  border-bottom: 2px solid #333333;
+  border-bottom: 1px solid #333333;
 }
 
 .search-history {
