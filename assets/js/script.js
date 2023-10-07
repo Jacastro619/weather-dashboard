@@ -4,13 +4,31 @@ var historyBtn = $("#history-btn");
 var searchInput = $("#search-input");
 var city;
 var formEl = $("#search-form");
+var bodyEl = $("body");
+var navEl = $("nav");
 var prevSearchEl = $(".prev-search");
-var weatherContent = $("#weather-content");
+var weatherContent = $(".weather-content");
 var currDayCity = $("#cur-day-city");
 var date = dayjs().format("M/D/YYYY");
+var currentTime = dayjs().format("H");
 var currDayDate;
 var numArray = ["1", "2", "3", "4", "5"];
 var historyArray;
+
+if (currentTime > 19) {
+  bodyEl.attr("class", "night-mode-body");
+  navEl.attr({
+    class: "night-mode-content",
+    style: "border-bottom: 2px solid white; padding: 5px;",
+  });
+  $(".direct").attr("style", "color: white;");
+  prevSearchEl.attr({
+    class: "prev-search col-12 col-md-2 col-lg-2 night-mode-content",
+  });
+  weatherContent.attr({
+    class: "weather-content col-12 col-md-9 col-lg-9 night-mode-content",
+  });
+}
 
 $(function () {
   renderBtns();
@@ -56,7 +74,7 @@ $(function () {
           icon = "🌧";
         }
         currDayCity.text(`${data.name} ${date} ${icon}`);
-        $("#cur-day-temp").text(`Temp: ${Math.floor(data.main.temp)}`);
+        $("#cur-day-temp").text(`Temp: ${Math.floor(data.main.temp)} °F`);
         $("#cur-day-wind").text(`Wind: ${data.wind.speed.toFixed(2)} MPH`);
         $("#cur-day-humidity").text(`Humidity: ${data.main.humidity}%`);
       });
@@ -148,7 +166,7 @@ $(function () {
               icon = "🌧";
             }
             currDayCity.text(`${data.name} ${date} ${icon}`);
-            $("#cur-day-temp").text(`Temp: ${Math.floor(data.main.temp)}`);
+            $("#cur-day-temp").text(`Temp: ${Math.floor(data.main.temp)} °F`);
             $("#cur-day-wind").text(`Wind: ${data.wind.speed.toFixed(2)} MPH`);
             $("#cur-day-humidity").text(`Humidity: ${data.main.humidity}%`);
           }

@@ -12,15 +12,15 @@
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body class="bg-light">
+  <body class="bg-light night-mode">
     <header>
       <h1>Weather Dashboard</h1>
     </header>
     <section class="search-history container-fluid">
       <div class="row m-2 mt-4">
-        <div class="prev-search col-12 col-md-2 col-lg-2 bg-light">
-          <p class="w-100 text-center mb-0">Search For a City</p>
-          <nav class="navbar navbar-light bg-light w-100">
+        <div class="prev-search col-12 col-md-2 col-lg-2">
+          <p class="direct w-100 text-center mb-0">Search For a City</p>
+          <nav class="navbar navbar-light w-100">
             <div class="container-fluid w-100 justify-content-center">
               <form id="search-form" class="search-bar d-flex">
                 <input
@@ -32,7 +32,7 @@
                 />
                 <button
                   id="search-btn"
-                  class="btn btn-outline-success"
+                  class="btn btn-outline-success bg-light"
                   type="submit"
                 >
                   Search
@@ -41,7 +41,7 @@
             </div>
           </nav>
         </div>
-        <div class="weather-content col-12 col-md-9 col-lg-9 bg-light">
+        <div class="weather-content col-12 col-md-9 col-lg-9">
           <div id="current-day">
             <h2 id="cur-day-city"></h2>
             <h3 id="cur-day-temp"></h3>
