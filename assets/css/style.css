@@ -44,6 +44,7 @@ nav {
   border: 2px solid #333333;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgb(105, 104, 104);
+  min-width: 300px;
   min-height: 500px;
   background-color: #f0eeee;
 }
@@ -64,7 +65,7 @@ nav {
 }
 
 .night-mode-content {
-  background: linear-gradient(to bottom right, #2b2a2a, #202020);
+  background: linear-gradient(to bottom, #494949, #2b2a2a);
 }
 
 .weather-content {
@@ -72,12 +73,9 @@ nav {
   flex-direction: column;
   align-content: center;
   visibility: hidden;
-  border: 2px solid #333333;
-  box-shadow: 2px 2px 8px rgb(105, 104, 104);
-  border-radius: 10px;
   margin-left: 10px;
   max-height: 475px;
-  background-color: #f0eeee;
+  max-width: 1500px;
 }
 
 #current-day {
@@ -98,12 +96,14 @@ nav {
 .cards {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .custom-card {
-  margin: 10px;
+  margin-top: 10px;
+  margin-left: 5px;
   background: linear-gradient(to bottom right, #2476ce, #1c2b5a);
   color: whitesmoke;
   border-radius: 10px;
+  margin-bottom: 20px;
 }

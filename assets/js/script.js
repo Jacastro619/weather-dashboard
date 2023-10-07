@@ -15,7 +15,7 @@ var currDayDate;
 var numArray = ["1", "2", "3", "4", "5"];
 var historyArray;
 
-if (currentTime > 19) {
+if (currentTime > 19 || currentTime < 6) {
   bodyEl.attr("class", "night-mode-body");
   navEl.attr({
     class: "night-mode-content",
@@ -24,9 +24,6 @@ if (currentTime > 19) {
   $(".direct").attr("style", "color: white;");
   prevSearchEl.attr({
     class: "prev-search col-12 col-md-2 col-lg-2 night-mode-content",
-  });
-  weatherContent.attr({
-    class: "weather-content col-12 col-md-9 col-lg-9 night-mode-content",
   });
 }
 
